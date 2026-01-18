@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: google-cloud-recommendations-ai
-  version: 0.11.0
+  version: "0.12.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/google_cloud_recommendations_ai-${{ version }}.tar.gz
-  sha256: e2ce24abc419527e51c6ca3a14fb1a21a9d1f0bf5f8c47742997f73093cde195
+  sha256: fd199ecdc95bb3eb604522b046097aacb41453082a93ed27f9e779afe7a24300
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
