@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: google-cloud-recommendations-ai
-  version: "0.13.0"
+  version: "0.13.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/google_cloud_recommendations_ai-${{ version }}.tar.gz
-  sha256: 27628d485ae6e992cc77737cec62881752294f8115441d3b6053728b0746cbfa
+  sha256: 9a62df4c3f9d42bf56fee8bea1fde978eab77cef8fd3862fedd99cb56ef8ad1c
 
 build:
   number: 0
@@ -24,7 +24,7 @@ requirements:
     - setuptools
   run:
     - python >=${{ python_min }}
-    - google-api-core >=2.11.0,<3.0.0
+    - google-api-core >=2.17.1,<3.0.0
     - google-api-core-grpc
     - google-auth >=2.14.1,<3.0.0,!=2.24.0,!=2.25.0
     # more restrictive constraint for python >=3.14
@@ -38,7 +38,9 @@ tests:
       imports:
         - google
         - google.cloud
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
       pip_check: true
 
 about:
